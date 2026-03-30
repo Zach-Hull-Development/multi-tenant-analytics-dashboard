@@ -31,7 +31,7 @@ app.post('/auth/login', (req, res) => {
 		tenant,
 	};
 	const token = jwt.sign(payload, JWT_SECRET);
-	res.json({ 
+	return res.json({ 
 		token,
 		user,
 		tenant,
@@ -39,23 +39,22 @@ app.post('/auth/login', (req, res) => {
 });
 
 app.get('/analytics/summary', authenticationMiddleware, (req, res) => {
-	const organizationId = (req as any).tenant.tenantId;
+	const organizationId = (req as any).tenant.id;
 	const eventSummary = getOrganizationAnalyticsSummary(organizationId);
-
+	
 	if (!eventSummary) {
-			res.json(404).json({ error: 'organization not found'});
+		return res.status(404).json({ error: 'organization not found'});
 	}
-
-	res.json(eventSummary);
+	return res.json(eventSummary);
 });
 
 app.get('/analytics/events', authenticationMiddleware, (req, res) => {
-	const organizationId = (req as any).tenant.tenantId;
+	const organizationId = (req as any).tenant.id;
 	const orgEvents = getOrganizationAnalyticEvents(organizationId);
 	if (!orgEvents) {
-		res.json(404).json({ error: 'organization not found'});
+		return res.status(404).json({ error: 'organization not found'});
 	}
-	res.json(orgEvents);
+	return res.json(orgEvents);
 });
 
 

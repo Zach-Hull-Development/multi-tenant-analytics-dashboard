@@ -31,7 +31,6 @@ export const useAuthStore = create<AuthState>((set) => ({
 	userId: null,
 	user: null,
 	organization: null,
-
 	login: ( loginResponse: LoginResponse ) => {
 		set({
 			token: loginResponse.token,

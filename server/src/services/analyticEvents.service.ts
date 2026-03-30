@@ -18,25 +18,25 @@ export const mockAlphaEvents: AnalyticEvent[] = [
         id: '102',
         organizationId: alphaOrganization.id,
         type: AnalyticEventType.VIEW,
-        timestamp: new Date(2026, 0, 1).toISOString(),
+        timestamp: new Date(2026, 0, 2).toISOString(),
     },
     {
         id: '103',
         organizationId: alphaOrganization.id,
         type: AnalyticEventType.DONATION,
-        timestamp: new Date(2026, 0, 2).toISOString(),
+        timestamp: new Date(2026, 0, 1).toISOString(),
     },
     {
         id: '104',
         organizationId: alphaOrganization.id,
         type: AnalyticEventType.DONATION,
-        timestamp: new Date(2026, 0, 2).toISOString(),
+        timestamp: new Date(2026, 0, 5).toISOString(),
     },
     {
         id: '105',
         organizationId: alphaOrganization.id,
         type: AnalyticEventType.VIEW,
-        timestamp: new Date(2026, 0, 3).toISOString(),
+        timestamp: new Date(2026, 0, 6).toISOString(),
     },
 ];
 

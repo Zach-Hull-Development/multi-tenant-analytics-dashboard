@@ -15,7 +15,7 @@ export const authenticationMiddleware = (req: Request, res: Response, next: Next
 
 	const token = splitToken[1] ?? '';
 	try {
-		const payload = jwt.verify(token, JWT_SECRET) as unknown as JWTPayload;
+		const payload = jwt.verify(token, JWT_SECRET) as JWTPayload;
 
 		const userId = payload.user.id;
 		const user = getUserById(userId);
@@ -24,9 +24,9 @@ export const authenticationMiddleware = (req: Request, res: Response, next: Next
 			return res.status(401).json({ error: 'Unauthorized'});
 		}
 
-
 		(req as any).user = payload.user;
 		(req as any).tenant = payload.tenant;
+		return next();
 	} catch (err) {
 		return res.status(401).json({ error: invalidAuthTokenError});
 	}
