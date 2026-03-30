@@ -1,0 +1,17 @@
+{
+  "name": "multi-tenant-analytics-dashboard",
+  "version": "1.0.0",
+  "description": "A coding assessment",
+  "scripts": {
+    "install-all": "cd frontend && npm i && cd ../server && npm i && cd ..",
+    "dev:ui": "cd frontend && npm run start",
+    "build:ui": "cd frontend && npm run build",
+    "test:ui": "echo \"Error: no test specified\" && exit 1",
+    "dev:server": "cd server && npm run start",
+    "build:server": "cd server && npm run build",
+    "test:server": "cd server && npm run test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
