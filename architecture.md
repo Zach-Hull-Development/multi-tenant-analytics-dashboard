@@ -4,7 +4,7 @@
 I chose the pooled approach as, to me, it makes more sense to manage one database than many.
 
     - Managing one database makes schema updates easier if using a relational db.
-    - I believe it should costs less to manage a single db infrastructure than an instance for for each tenant you have (infra, backups, etc)
+    - It should costs less to manage a single db infrastructure than an instance for each tenant you have (infra, backups, etc)
     - Allows us to query our data easier being with it being in one spot
 
 # AWS Service
